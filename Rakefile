@@ -17,10 +17,11 @@ Jeweler::Tasks.new do |gem|
   gem.name = "yandex_metric"
   gem.homepage = "http://github.com/bskaplou/yandex_metric"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Simple API for Yandex Metric manipulations through Yandex Metric API}
+  gem.description = %Q{YandexMetric hides OAuth from user and converts Yandex Metric REST methods into ruby methods}
   gem.email = "bskaplou@gmail.com"
   gem.authors = ["bskaplou"]
+  gem.version = File.read 'VERSION'
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -42,7 +43,7 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
