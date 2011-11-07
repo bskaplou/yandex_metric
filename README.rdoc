@@ -14,24 +14,24 @@ All methods are taking the only argument which is hash.
 
 == Examples
 
-ym = YandexMetric.new({
-  :username => username,
-  :password => password,
-  :client_id => client_id,
-  :client_secret => client_secret,
-})
+ ym = YandexMetric.new({
+   :username => username,
+   :password => password,
+   :client_id => client_id,
+   :client_secret => client_secret,
+ })
 
-cid = ym.get_counters['counters'][0]['id']
-puts ym.get_counter_goals({'id' => cid})
-yesterday = (Time.new - 86400).strftime '%Y%m%d'
-today = Time.new.strftime '%Y%m%d'
-p = {
-  'id' => cid,
-  'date1' => yesterday,
-  'date2' => today,
-  'group' => 'day'
-}
-puts ym.get_stat_traffic_summary(p)
+ cid = ym.get_counters['counters'][0]['id']
+ puts ym.get_counter_goals({'id' => cid})
+ yesterday = (Time.new - 86400).strftime '%Y%m%d'
+ today = Time.new.strftime '%Y%m%d'
+ p = {
+   'id' => cid,
+   'date1' => yesterday,
+   'date2' => today,
+   'group' => 'day'
+ }
+ puts ym.get_stat_traffic_summary(p)
 
 == Contributing to yandex_metric
  
