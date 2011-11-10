@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc"
   ]
+  s.require_path = '.'
   s.files = [
     ".document",
     "Gemfile",
