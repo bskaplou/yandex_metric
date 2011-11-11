@@ -5,8 +5,11 @@ Simple wrapper over Yandex Metric REST API.
 == Methods
 
 Yandex Metric API => Ruby
+
 GET /counters => get_counters
+
 POST /counter/{id}/filters => post_counter_filters
+
 DELETE /counter/{id}/grant/{user_login} => delete_counter_grant
 
 All methods are taking the only argument which is hash.
@@ -14,7 +17,7 @@ All methods are taking the only argument which is hash.
 
 == Examples
 
- ym = YandexMetric.new({
+ ym = YM::YandexMetric.new({
    :username => username,
    :password => password,
    :client_id => client_id,

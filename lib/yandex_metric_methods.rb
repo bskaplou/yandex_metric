@@ -1,3 +1,4 @@
+module YM
 YandexMetric.ya_method(['Список счетчиков','/counters','GET POST','-',])
 YandexMetric.ya_method(['Счетчик','/counter/{id}','GET PUT DELETE','id  ― числовой идентификатор счетчика.',])
 YandexMetric.ya_method(['Список целей счетчика','/counter/{id}/goals','GET POST','-',])
@@ -42,3 +43,4 @@ YandexMetric.ya_method(['Версии Silverlight','stat/tech/silverlight','GET'
 YandexMetric.ya_method(['Версии .NET','stat/tech/dotnet','GET',])
 YandexMetric.ya_method(['Наличие Java','stat/tech/java','GET',])
 YandexMetric.ya_method(['Наличие Cookies','stat/tech/cookies','GET',])
+end
