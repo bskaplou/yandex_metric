@@ -4,17 +4,20 @@ require 'cgi'
 require 'json'
 
 module YM
+  SSL_PORT = 443
+  TIMEOUT = 50
+
   class Client
     def self.encode_params prms
       prms.inject ('') { |acc, (k, v)|
-        acc + CGI::escape(k) + "=" + CGI::escape(v.to_s) + '&'
+        acc + CGI::escape(k) + '=' + CGI::escape(v.to_s) + '&'
       }
     end
   
     def self.default_args
-      {:port => 443,
+      {:port => SSL_PORT,
        :ssl => true,
-       :timeout => 50}
+       :timeout => TIMEOUT}
     end
   
     def self.client args = {}
@@ -27,7 +30,7 @@ module YM
     end
   
     def self.result res
-      raise res.value if ! res.instance_of?(Net::HTTPOK)
+      raise res.value unless res.instance_of? Net::HTTPOK
       res.body
     end
   
@@ -51,14 +54,14 @@ module YM
   
   class YandexMetric
     OAUTH_HOST = 'oauth.yandex.ru'
-    OAUTH_PORT = 443
+    OAUTH_PORT = SSL_PORT
     OAUTH_PATH = '/token'
     API_HOST = 'api-metrika.yandex.ru'
-    API_PORT = 443
+    API_PORT = SSL_PORT
     SSL = true
   
     def default_options
-      {:timeout => 50}
+      {:timeout => TIMEOUT}
     end
   
     def default_headers
@@ -82,7 +85,6 @@ module YM
         :ssl => SSL,
         :path => OAUTH_PATH,
         :params => params,
-        :headers => {},
         :timeout => options[:timeout]
       }
       JSON.parse(Client.post args)['access_token']
@@ -113,14 +115,15 @@ module YM
         method.downcase + '_' + method_tail
     end
   
-    def self.ya_method data
-      (description, path, methods, param_desc) = data
+    def self.api_method description, path, methods, param_desc = ''
       #path sometimes starts with '/' but not always
-      path[0] != '/' and path = '/' + path
+      path = '/' + path unless path[0] == '/'
       methods.split(' ').each do |m|
         define_method method_name(m, path) do |args = {}|
           #/path/{id}/param => /path/id_value/param
-          real_path = path.gsub(/\{[a-zA-Z0-9_]+\}/) {|id| args[id[1..-2]]} 
+          real_path = path.gsub(/\{[a-zA-Z0-9_]+\}/) {|id|
+            args.delete(id[1..-2])
+          } 
           generic_method m.downcase.to_sym, real_path, args
         end
       end

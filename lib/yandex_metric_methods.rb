@@ -1,46 +1,46 @@
 module YM
-YandexMetric.ya_method(['Список счетчиков','/counters','GET POST','-',])
-YandexMetric.ya_method(['Счетчик','/counter/{id}','GET PUT DELETE','id  ― числовой идентификатор счетчика.',])
-YandexMetric.ya_method(['Список целей счетчика','/counter/{id}/goals','GET POST','-',])
-YandexMetric.ya_method(['Цель счетчика','/counter/{id}/goal/{goal_id}','GET PUT DELETE','goal_id  ― числовой идентификатор цели.',])
-YandexMetric.ya_method(['Список фильтров счетчика','/counter/{id}/filters','GET POST','filter_id  ― числовой идентификатор фильтра.',])
-YandexMetric.ya_method(['Фильтр счетчика','/counter/{id}/filter/{filter_id}','GET PUT DELETE','filter_id  ― числовой идентификатор фильтра.',])
-YandexMetric.ya_method(['Список операций счетчика','/counter/{id}/operations','GET POST','-',])
-YandexMetric.ya_method(['Операция счетчика','/counter/{id}/operation/{operation_id}','GET PUT DELETE','operation_id  ― числовой идентификатор операции.',])
-YandexMetric.ya_method(['Список гостевых доступов счетчика','/counter/{id}/grants','GET POST','-',])
-YandexMetric.ya_method(['Право доступа к счетчику','/counter/{id}/grant/{user_login}','GET PUT DELETE','user_login  ― логин пользователя, которому выдан гостевой доступ. Для публичной статистики вместо логина пользователя указывается «0».',])
-YandexMetric.ya_method(['Список собственных представителей','/delegates','GET PUT POST','-',])
-YandexMetric.ya_method(['Представитель','/delegate/{user_login}','DELETE','user_login  ― логин пользователя, которому выдан полный доступ.',])
-YandexMetric.ya_method(['Список аккаунтов (прав на представительство)','/accounts','GET PUT','-',])
-YandexMetric.ya_method(['Аккаунт','/account/{user_login}','DELETE','user_login  ― логин владельца аккаунта.',])
-YandexMetric.ya_method(['Посещаемость','stat/traffic/summary','GET',])
-YandexMetric.ya_method(['Вовлечение','stat/traffic/deepness','GET',])
-YandexMetric.ya_method(['По времени суток','stat/traffic/hourly','GET',])
-YandexMetric.ya_method(['Нагрузка на сайт','stat/traffic/load','GET',])
-YandexMetric.ya_method(['Сводка','stat/sources/summary','GET',])
-YandexMetric.ya_method(['Сайты','stat/sources/sites','GET',])
-YandexMetric.ya_method(['Поисковые системы','stat/sources/search_engines','GET',])
-YandexMetric.ya_method(['Поисковые фразы','stat/sources/phrases','GET',])
-YandexMetric.ya_method(['Рекламные системы','stat/sources/marketing','GET',])
-YandexMetric.ya_method(['Директ ― сводка','stat/sources/direct/summary','GET',])
-YandexMetric.ya_method(['Директ ― площадки','stat/sources/direct/platforms','GET',])
-YandexMetric.ya_method(['Директ ― регионы','stat/sources/direct/regions','GET',])
-YandexMetric.ya_method(['Метки','stat/sources/tags','GET',])
-YandexMetric.ya_method(['Популярное содержание','stat/content/popular','GET',])
-YandexMetric.ya_method(['Страницы входа','stat/content/entrance','GET',])
-YandexMetric.ya_method(['Страницы выхода','stat/content/exit','GET',])
-YandexMetric.ya_method(['Заголовки страниц','stat/content/titles','GET',])
-YandexMetric.ya_method(['Параметры URL','stat/content/url_param','GET',])
-YandexMetric.ya_method(['Отчет по Странам мира','stat/geo','GET',])
-YandexMetric.ya_method(['Пол и возраст','stat/demography/age_gender','GET',])
-YandexMetric.ya_method(['Половозрастная структура','stat/demography/structure','GET',])
-YandexMetric.ya_method(['Браузеры','stat/tech/browsers','GET',])
-YandexMetric.ya_method(['Операционные системы','stat/tech/os','GET',])
-YandexMetric.ya_method(['Разрешения дисплеев','stat/tech/display','GET',])
-YandexMetric.ya_method(['Мобильные устройства','stat/tech/mobile','GET',])
-YandexMetric.ya_method(['Версии Flash','stat/tech/flash','GET',])
-YandexMetric.ya_method(['Версии Silverlight','stat/tech/silverlight','GET',])
-YandexMetric.ya_method(['Версии .NET','stat/tech/dotnet','GET',])
-YandexMetric.ya_method(['Наличие Java','stat/tech/java','GET',])
-YandexMetric.ya_method(['Наличие Cookies','stat/tech/cookies','GET',])
+YandexMetric.api_method 'Список счетчиков','/counters','GET POST','-'
+YandexMetric.api_method 'Счетчик','/counter/{id}','GET PUT DELETE','id  ― числовой идентификатор счетчика.'
+YandexMetric.api_method 'Список целей счетчика','/counter/{id}/goals','GET POST','-'
+YandexMetric.api_method 'Цель счетчика','/counter/{id}/goal/{goal_id}','GET PUT DELETE','goal_id  ― числовой идентификатор цели.'
+YandexMetric.api_method 'Список фильтров счетчика','/counter/{id}/filters','GET POST','filter_id  ― числовой идентификатор фильтра.'
+YandexMetric.api_method 'Фильтр счетчика','/counter/{id}/filter/{filter_id}','GET PUT DELETE','filter_id  ― числовой идентификатор фильтра.'
+YandexMetric.api_method 'Список операций счетчика','/counter/{id}/operations','GET POST','-'
+YandexMetric.api_method 'Операция счетчика','/counter/{id}/operation/{operation_id}','GET PUT DELETE','operation_id  ― числовой идентификатор операции.'
+YandexMetric.api_method 'Список гостевых доступов счетчика','/counter/{id}/grants','GET POST','-'
+YandexMetric.api_method 'Право доступа к счетчику','/counter/{id}/grant/{user_login}','GET PUT DELETE','user_login  ― логин пользователя, которому выдан гостевой доступ. Для публичной статистики вместо логина пользователя указывается «0».'
+YandexMetric.api_method 'Список собственных представителей','/delegates','GET PUT POST','-'
+YandexMetric.api_method 'Представитель','/delegate/{user_login}','DELETE','user_login  ― логин пользователя, которому выдан полный доступ.'
+YandexMetric.api_method 'Список аккаунтов (прав на представительство)','/accounts','GET PUT','-'
+YandexMetric.api_method 'Аккаунт','/account/{user_login}','DELETE','user_login  ― логин владельца аккаунта.'
+YandexMetric.api_method 'Посещаемость','stat/traffic/summary','GET'
+YandexMetric.api_method 'Вовлечение','stat/traffic/deepness','GET'
+YandexMetric.api_method 'По времени суток','stat/traffic/hourly','GET'
+YandexMetric.api_method 'Нагрузка на сайт','stat/traffic/load','GET'
+YandexMetric.api_method 'Сводка','stat/sources/summary','GET'
+YandexMetric.api_method 'Сайты','stat/sources/sites','GET'
+YandexMetric.api_method 'Поисковые системы','stat/sources/search_engines','GET'
+YandexMetric.api_method 'Поисковые фразы','stat/sources/phrases','GET'
+YandexMetric.api_method 'Рекламные системы','stat/sources/marketing','GET'
+YandexMetric.api_method 'Директ ― сводка','stat/sources/direct/summary','GET'
+YandexMetric.api_method 'Директ ― площадки','stat/sources/direct/platforms','GET'
+YandexMetric.api_method 'Директ ― регионы','stat/sources/direct/regions','GET'
+YandexMetric.api_method 'Метки','stat/sources/tags','GET'
+YandexMetric.api_method 'Популярное содержание','stat/content/popular','GET'
+YandexMetric.api_method 'Страницы входа','stat/content/entrance','GET'
+YandexMetric.api_method 'Страницы выхода','stat/content/exit','GET'
+YandexMetric.api_method 'Заголовки страниц','stat/content/titles','GET'
+YandexMetric.api_method 'Параметры URL','stat/content/url_param','GET'
+YandexMetric.api_method 'Отчет по Странам мира','stat/geo','GET'
+YandexMetric.api_method 'Пол и возраст','stat/demography/age_gender','GET'
+YandexMetric.api_method 'Половозрастная структура','stat/demography/structure','GET'
+YandexMetric.api_method 'Браузеры','stat/tech/browsers','GET'
+YandexMetric.api_method 'Операционные системы','stat/tech/os','GET'
+YandexMetric.api_method 'Разрешения дисплеев','stat/tech/display','GET'
+YandexMetric.api_method 'Мобильные устройства','stat/tech/mobile','GET'
+YandexMetric.api_method 'Версии Flash','stat/tech/flash','GET'
+YandexMetric.api_method 'Версии Silverlight','stat/tech/silverlight','GET'
+YandexMetric.api_method 'Версии .NET','stat/tech/dotnet','GET'
+YandexMetric.api_method 'Наличие Java','stat/tech/java','GET'
+YandexMetric.api_method 'Наличие Cookies','stat/tech/cookies','GET'
 end
