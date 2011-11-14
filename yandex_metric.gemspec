@@ -9,14 +9,13 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["bskaplou"]
-  s.date = "2011-11-07"
+  s.date = "2011-11-14"
   s.description = "YandexMetric hides OAuth from user and converts Yandex Metric REST methods into ruby methods"
   s.email = "bskaplou@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
-  s.require_path = '.'
   s.files = [
     ".document",
     "Gemfile",
@@ -27,7 +26,8 @@ Gem::Specification.new do |s|
     "lib/yandex_metric.rb",
     "lib/yandex_metric_methods.rb",
     "test/helper.rb",
-    "test/test_yandex_metric.rb"
+    "test/test_yandex_metric.rb",
+    "yandex_metric.gemspec"
   ]
   s.homepage = "http://github.com/bskaplou/yandex_metric"
   s.licenses = ["MIT"]
