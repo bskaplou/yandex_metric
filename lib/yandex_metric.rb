@@ -3,7 +3,7 @@ require 'net/http'
 require 'cgi'
 require 'json'
 
-module YM
+module Yandex
   SSL_PORT = 443
   TIMEOUT = 50
 
@@ -52,7 +52,7 @@ module YM
     end
   end
   
-  class YandexMetric
+  class Metric
     OAUTH_HOST = 'oauth.yandex.ru'
     OAUTH_PORT = SSL_PORT
     OAUTH_PATH = '/token'
