@@ -60,7 +60,7 @@ module Yandex
     API_HOST = 'api-metrika.yandex.ru'
     API_PORT = HTTP_PORT
     OAUTH_SSL = true
-    API_SSL = true
+    API_SSL = false
   
     def default_options
       {:timeout => TIMEOUT}
