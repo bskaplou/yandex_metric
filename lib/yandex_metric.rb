@@ -5,6 +5,7 @@ require 'json'
 
 module Yandex
   SSL_PORT = 443
+  HTTP_PORT = 80
   TIMEOUT = 50
 
   class Client
@@ -57,8 +58,9 @@ module Yandex
     OAUTH_PORT = SSL_PORT
     OAUTH_PATH = '/token'
     API_HOST = 'api-metrika.yandex.ru'
-    API_PORT = SSL_PORT
-    SSL = true
+    API_PORT = HTTP_PORT
+    OAUTH_SSL = true
+    API_SSL = true
   
     def default_options
       {:timeout => TIMEOUT}
@@ -82,7 +84,7 @@ module Yandex
       args = {
         :host => OAUTH_HOST,
         :port => OAUTH_PORT,
-        :ssl => SSL,
+        :ssl => OAUTH_SSL,
         :path => OAUTH_PATH,
         :params => params,
         :timeout => options[:timeout]
@@ -99,7 +101,7 @@ module Yandex
       args = {
         :host => API_HOST,
         :port => API_PORT,
-        :ssl => SSL,
+        :ssl => API_SSL,
         :path => path,
         :params => params,
         :headers => headers,
